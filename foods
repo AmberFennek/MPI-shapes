@@ -1,3 +1,3 @@
-foodname:{sublist:{prop:{:1}/{midstr:{:3},{add:2,{strlen:{:1}}},-1},{:2}},1,1,;}
-listfoods:{parse:x,{listprops:{:1}/,{:2}},{foodname:{:1},{:2},{&x}},\r}
+foodtext:{sublist:{prop:{:1}/{midstr:{:3},{add:2,{strlen:{:1}}},-1},{:2}},{default:{:4},1},{default:{:4},1},;}
+listfoods:{parse:x,{listprops:{:1}/,{:2}},{foodtext:{:1},{:2},{&x}},\r}
 linefoods:{commas:{listfoods:{:1},{:2}}, and }
