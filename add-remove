@@ -1,0 +1,13 @@
+{if:{&arg},
+  {store:{mklist:{prop:thelist,this},{&arg}},thelist,this}
+  {tell:  Updated.  The list is now: {prop:thelist,this},me}
+,
+  {tell:  What do you want to add to the list?,me}
+}
+
+{if:{lmember:{prop:thelist,this},{&arg}},
+  {store:{lremove:{prop:thelist},{&arg}},thelist,this}
+  {tell:  Done.  The list is now: {prop:thelist,this},me}
+,
+  {tell:  I don't find '{&arg}' on the list.  The list is: {prop:thelist,this},me}
+}
