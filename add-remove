@@ -1,3 +1,14 @@
+                 __                      __      __     __       __  
+            |\ |/  \|\ | __ |__| /\ |\ ||  \|__|/  \|  |  \||\ |/ _  
+            | \|\__/| \|    |  |/--\| \||__/|  |\__/|__|__/|| \|\__) 
+                                                         
+                                ___     __  __      __      
+                  |  | /\ |  |_/ | |__||__)/  \/  \/ _ |__| 
+                  |/\|/--\|__| \ | |  || \ \__/\__/\__)|  | 
+
+## OF REFACTORING THE add and remove element code to be reusable.
+
+### Function for add:
 {if:{&arg},
   {store:{mklist:{prop:thelist,this},{&arg}},thelist,this}
   {tell:  Updated.  The list is now: {prop:thelist,this},me}
@@ -5,9 +16,31 @@
   {tell:  What do you want to add to the list?,me}
 }
 
+### Function for remove:
 {if:{lmember:{prop:thelist,this},{&arg}},
   {store:{lremove:{prop:thelist},{&arg}},thelist,this}
   {tell:  Done.  The list is now: {prop:thelist,this},me}
 ,
   {tell:  I don't find '{&arg}' on the list.  The list is: {prop:thelist,this},me}
 }
+
+#### The add and remove functions seem strikingly similar.
+1. Identify a pattern duplicating: 
+
+{if:SOMETHING#1},
+  {store:{SOMETHING#2:SOMETHING#3}
+  {tell:  Updated.  The list is now: SOMETHING#4,me}
+,
+  {tell:SOMETHING#5,me}
+}
+
+What are these SOMETHINGs?
+
+  1. {&arg} or {lmember:{prop:thelist,this},{&arg}}
+  2. mklist or lremove
+  3. {prop:thelist},{&arg}},thelist,this
+  4. {prop:thelist,this}
+  5.   What do you want to add to the list? or   I don't find '{&arg}' on the list.  The list is: {prop:thelist,this}
+
+#### Some of the repeated elements of the two functions have some things in common.  
+2. Repeat step 1 for the list of SOMETHINGs.
