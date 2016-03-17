@@ -44,3 +44,9 @@ What are these SOMETHINGs?
 
 #### Some of the repeated elements of the two functions have some things in common.  
 2. Repeat step 1 for the list of SOMETHINGs.
+
+  1. {prop:thelist,this} appears 3 times (and a fourth time in error as {prop:thelist}).
+  2. {&arg} appears 4 times.
+  
+Since {tell:} defaults to target me, that can be excluded, and reduced to:
+{if:{:1}},{store:{{:2}:{:3}}{tell:  Updated.  The list is now: {:4}},{tell:{:5}}}
