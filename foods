@@ -1,3 +1,7 @@
+The 7 properties of foods can be thought of as columns of a spreadsheet,
+where we can ask for any column (N) 1 through 7 on row A of menu M.
+{foodtext:M,A,x,N}
+
 foodtext:{sublist:{prop:{:1}/{midstr:{:3},{add:2,{strlen:{:1}}},-1},{:2}},{default:{:4},1},{default:{:4},1},;}
 listfoods:{parse:x,{listprops:{:1}/,{:2}},{foodtext:{:1},{:2},{&x}},\r}
 linefoods:{commas:{listfoods:{:1},{:2}}, and }
