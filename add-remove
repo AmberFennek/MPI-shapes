@@ -49,4 +49,4 @@ What are these SOMETHINGs?
   2. {&arg} appears 4 times.
   
 Since {tell:} defaults to target me, that can be excluded, and reduced to:
-{if:{:1}},{store:{{:2}:{:3}}{tell:  Updated.  The list is now: {:4}},{tell:{:5}}}
+add-remove:{if:{:1}},{store:{{:2}:{:3}}{tell:  Updated.  The list is now: {:4}},{tell:{:5}}}
